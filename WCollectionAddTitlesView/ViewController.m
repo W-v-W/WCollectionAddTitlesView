@@ -32,7 +32,7 @@
         [weakCV addContent:content toIndex:index];
     };
     cv.turnedPageBlock = ^(NSUInteger index){
-        NSLog(@"Turned page: %lud", (unsigned long)index);
+        NSLog(@"Turned page: %@", @(index));
     };
     
     [self.view addSubview:titleView];
