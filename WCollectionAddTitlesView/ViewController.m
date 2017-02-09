@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+
     WInteractCV *cv = [[WInteractCV alloc]initWithFrame:CGRectMake(0, 104, w_screen_width, w_screen_height - 20 - 40)];
     WTitleScrollView *titleView = [[WTitleScrollView alloc]initWithFrame:CGRectMake(0, 64, w_screen_width, 40) titles:@[@{@"name":@"Business"},@{@"name":@"Technology"},@{@"name":@"Science"},@{@"name":@"Health"},@{@"name":@"Sports"},@{@"name":@"Entertainment"}]];
     cv.combinedTitleView = titleView;
