@@ -16,7 +16,7 @@
 		FB2ECD841E4C8EAB00C6BEA7 /* WButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ECD7E1E4C8EAB00C6BEA7 /* WButton.m */; };
 		FB2ECD851E4C8EAB00C6BEA7 /* WInteractCV.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ECD801E4C8EAB00C6BEA7 /* WInteractCV.m */; };
 		FB2ECD861E4C8EAB00C6BEA7 /* WTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ECD831E4C8EAB00C6BEA7 /* WTitleScrollView.m */; };
-		FBEC25621E5052C000C93AC0 /* SimulatorScreenShot.png in Resources */ = {isa = PBXBuildFile; fileRef = FBEC25611E5052C000C93AC0 /* SimulatorScreenShot.png */; };
+		FBEC25641E5055C900C93AC0 /* SimulatorScreenShot.png in Resources */ = {isa = PBXBuildFile; fileRef = FBEC25631E5055C900C93AC0 /* SimulatorScreenShot.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		FB2ECD811E4C8EAB00C6BEA7 /* WInteractMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WInteractMacro.h; sourceTree = "<group>"; };
 		FB2ECD821E4C8EAB00C6BEA7 /* WTitleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTitleScrollView.h; sourceTree = "<group>"; };
 		FB2ECD831E4C8EAB00C6BEA7 /* WTitleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTitleScrollView.m; sourceTree = "<group>"; };
-		FBEC25611E5052C000C93AC0 /* SimulatorScreenShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SimulatorScreenShot.png; sourceTree = "<group>"; };
+		FBEC25631E5055C900C93AC0 /* SimulatorScreenShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SimulatorScreenShot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 		FB2B3D9E1E49EF06004D4A40 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FBEC25611E5052C000C93AC0 /* SimulatorScreenShot.png */,
+				FBEC25631E5055C900C93AC0 /* SimulatorScreenShot.png */,
 				FB2B3D9F1E49EF06004D4A40 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -164,8 +164,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBEC25621E5052C000C93AC0 /* SimulatorScreenShot.png in Resources */,
 				FB2B3DAE1E49EF06004D4A40 /* LaunchScreen.storyboard in Resources */,
+				FBEC25641E5055C900C93AC0 /* SimulatorScreenShot.png in Resources */,
 				FB2B3DAB1E49EF06004D4A40 /* Assets.xcassets in Resources */,
 				FB2B3DA91E49EF06004D4A40 /* Main.storyboard in Resources */,
 			);
