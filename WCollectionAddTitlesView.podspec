@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
 
 
-  s.author    = "salasaq"
+  s.author    = "wz"
 
 
   s.platform     = :ios, "7.0"
