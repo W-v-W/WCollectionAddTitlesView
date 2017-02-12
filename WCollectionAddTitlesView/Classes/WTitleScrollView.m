@@ -160,7 +160,7 @@
 #pragma mark -
 
 -(void)click:(id)sender{
-    NSInteger index = [self.btnArr indexOfObject:sender];
+    NSInteger index = (NSInteger)[self.btnArr indexOfObject:sender];
 //    NSLog(@"click title at :%@", @(index));
     
     self.interactCV.triggerType = index;
