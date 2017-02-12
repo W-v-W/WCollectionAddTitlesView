@@ -160,11 +160,10 @@
 #pragma mark -
 
 -(void)click:(id)sender{
-    NSInteger index = (NSInteger)[self.btnArr indexOfObject:sender];
-//    NSLog(@"click title at :%@", @(index));
+    NSInteger index = [self.btnArr indexOfObject:sender];
     
     self.interactCV.triggerType = index;
-    
+
     [self.interactCV scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
 
 }
