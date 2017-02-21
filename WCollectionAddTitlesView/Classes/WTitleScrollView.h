@@ -23,7 +23,7 @@
 @property(nonatomic, strong, readonly)UIView *underlineView;
 @property(nonatomic, strong, readonly)NSArray<NSDictionary *> *titles;
 
-@property(nonatomic, strong)UIButton *selectedButton;
+@property(nonatomic, strong)WButton *selectedButton;
 
 @property(nonatomic, weak) WInteractCV *interactCV;
 

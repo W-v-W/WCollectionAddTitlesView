@@ -155,7 +155,7 @@
 }
 
 
--(void)setSelectedButton:(UIButton *)selectedButton{
+-(void)setSelectedButton:(WButton *)selectedButton{
     [self.selectedButton setTitleColor:self.normalColor forState:UIControlStateNormal];
     _selectedButton = selectedButton;
     [self.selectedButton setTitleColor:self.highlightColor forState:UIControlStateNormal];

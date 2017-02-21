@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "WCollectionAddTitlesView"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "A collection view interact with titles in scroll view."
 
   s.description  = <<-DESC
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
 
 
-  s.author    = "wz"
+  s.author    = "Wz"
 
 
   s.platform     = :ios, "7.0"
