@@ -8,24 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
-@class WInteractCV;
+@class WInteractCV, WButton;
 @interface WTitleScrollView : UIScrollView
 
 @property(nonatomic, strong)UIColor *highlightColor;
 @property(nonatomic, strong)UIColor *normalColor;
 @property(nonatomic, strong)UIFont *titleFont;
-@property(nonatomic, assign)CGFloat leftMargin;     // 左边距
-@property(nonatomic, assign)CGFloat rightMargin;    // 右边距
-@property(nonatomic, assign)CGFloat centerMargin;   // 中间距
 
-@property(nonatomic, strong)NSArray<UIButton *> *btnArr;
-@property(nonatomic, strong)UIView *underlineView;
+@property(nonatomic, assign, readonly)CGFloat leftMargin;     // 左边距
+@property(nonatomic, assign, readonly)CGFloat rightMargin;    // 右边距
+@property(nonatomic, assign, readonly)CGFloat centerMargin;   // 中间距
+
+@property(nonatomic, strong, readonly)NSArray<WButton *> *btnArr;
+@property(nonatomic, strong, readonly)UIView *underlineView;
+@property(nonatomic, strong, readonly)NSArray<NSDictionary *> *titles;
+
 @property(nonatomic, strong)UIButton *selectedButton;
-
 
 @property(nonatomic, weak) WInteractCV *interactCV;
 
-@property(nonatomic, strong)NSArray<NSDictionary *> *titles;
 
 -(instancetype)initWithFrame:(CGRect)frame titles:(NSArray<NSDictionary *> *)titles;
 
@@ -33,6 +34,6 @@
 -(CGRect)lineFrameForTitleAtIndex:(NSUInteger)index;
 -(CGPoint)offsetChangeForIndex:(NSUInteger)index;
 
-
+-(void)setMarginsLeft:(CGFloat)leftMargin center:(CGFloat)centerMargin right:(CGFloat)rightMargin;
 
 @end

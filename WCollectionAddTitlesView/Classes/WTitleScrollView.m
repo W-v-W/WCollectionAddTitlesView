@@ -17,9 +17,21 @@
 
 @interface WTitleScrollView ()
 
+@property(nonatomic, strong, readwrite)NSArray<WButton *> *btnArr;
+@property(nonatomic, strong, readwrite)UIView *underlineView;
+@property(nonatomic, strong, readwrite)NSArray<NSDictionary *> *titles;
+
 @end
 
 @implementation WTitleScrollView
+
+@synthesize highlightColor=_highlightColor;
+@synthesize normalColor=_normalColor;
+@synthesize titleFont=_titleFont;
+
+@synthesize leftMargin=_leftMargin;
+@synthesize centerMargin=_centerMargin;
+@synthesize rightMargin=_rightMargin;
 
 #pragma mark - getter
 
@@ -60,7 +72,89 @@
     return _centerMargin;
 }
 
+
 #pragma mark - setter
+
+-(void)setHighlightColor:(UIColor *)highlightColor{
+    self.underlineView.backgroundColor = highlightColor;
+    [self.selectedButton setTitleColor:highlightColor forState:UIControlStateNormal];
+    
+    _highlightColor = highlightColor;
+}
+
+-(void)setNormalColor:(UIColor *)normalColor{
+    for (UIButton *btn in self.btnArr) {
+        if (btn != self.selectedButton) {
+            [btn setTitleColor:normalColor forState:UIControlStateNormal];
+        }
+    }
+    _normalColor = normalColor;
+}
+
+-(void)setTitleFont:(UIFont *)titleFont{
+    
+    CGFloat startX = self.leftMargin;
+    
+    for (int i = 0; i < self.titles.count; i++) {
+        
+        NSString *title = self.titles[i][@"name"];
+        CGSize size = [title boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, 0) options:NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:titleFont} context:nil].size;
+        
+        WButton *btn = self.btnArr[i];
+        btn.bounds = CGRectMake(0, 0, size.width, size.height);
+        btn.center = CGPointMake(startX + size.width/2, self.frame.size.height/2);
+        startX += size.width + self.centerMargin;
+        
+        [btn setTitle:title forState:UIControlStateNormal];
+        btn.titleLabel.font = titleFont;
+       
+    }
+    
+    //更新content size
+    self.contentSize = CGSizeMake(startX + self.rightMargin - self.centerMargin, self.frame.size.height);
+    
+    //Align center
+    if (self.contentSize.width < self.frame.size.width) {
+        self.contentOffset = CGPointMake(-(self.frame.size.width-self.contentSize.width)/2, 0);
+    }
+
+
+    _titleFont = titleFont;
+}
+
+-(void)setMarginsLeft:(CGFloat)leftMargin center:(CGFloat)centerMargin right:(CGFloat)rightMargin{
+    
+    CGFloat startX = leftMargin;
+    
+    for (int i = 0; i < self.titles.count; i++) {
+        
+        NSString *title = self.titles[i][@"name"];
+        CGSize size = [title boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, 0) options:NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:self.titleFont} context:nil].size;
+        
+        WButton *btn = self.btnArr[i];
+        btn.bounds = CGRectMake(0, 0, size.width, size.height);
+        btn.center = CGPointMake(startX + size.width/2, self.frame.size.height/2);
+        startX += size.width + centerMargin;
+        
+        [btn setTitle:title forState:UIControlStateNormal];
+        btn.titleLabel.font = self.titleFont;
+        
+    }
+    
+    //更新content size
+    self.contentSize = CGSizeMake(startX + rightMargin - centerMargin, self.frame.size.height);
+    
+    //Align center
+    if (self.contentSize.width < self.frame.size.width) {
+        self.contentOffset = CGPointMake(-(self.frame.size.width-self.contentSize.width)/2, 0);
+    }
+
+    _leftMargin = leftMargin;
+    _centerMargin = centerMargin;
+    _rightMargin = rightMargin;;
+}
+
+
 -(void)setSelectedButton:(UIButton *)selectedButton{
     [self.selectedButton setTitleColor:self.normalColor forState:UIControlStateNormal];
     _selectedButton = selectedButton;

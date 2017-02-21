@@ -22,6 +22,12 @@
 
     WInteractCV *cv = [[WInteractCV alloc]initWithFrame:CGRectMake(0, 104, w_screen_width, w_screen_height - 20 - 40)];
     WTitleScrollView *titleView = [[WTitleScrollView alloc]initWithFrame:CGRectMake(0, 64, w_screen_width, 40) titles:@[@{@"name":@"Business"},@{@"name":@"Technology"},@{@"name":@"Science"},@{@"name":@"Health"},@{@"name":@"Sports"},@{@"name":@"Entertainment"}]];
+    
+//    titleView.titleFont = [UIFont systemFontOfSize:30];
+//    titleView.highlightColor = [UIColor blackColor];
+//    titleView.normalColor = [UIColor lightGrayColor];
+//    [titleView setMarginsLeft:20 center:20 right:20];
+    
     cv.combinedTitleView = titleView;
     
     __weak typeof(cv)weakCV = cv;
